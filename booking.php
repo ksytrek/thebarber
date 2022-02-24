@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
         $services_time = '45';
         $price = '254';
         echo '<script type="text/javascript">';
-        echo "alert('{$_POST['services2']}')";
+        echo "alert('{$services}')";
         echo '</script>';
         // $description = 'description';
 
