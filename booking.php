@@ -51,8 +51,8 @@ if (isset($_POST['submit'])) {
         #------------------------- New Co
 
         $custid = $_SESSION['id'];
-        $services = $_POST['services'] == ' ' ? 'null' : $_POST['services'];
-        $services2 = $_POST['services2'] == null  ? 'null' : $_POST['services2'];
+        $services = $_POST['services'] == ' ' ? '0' : $_POST['services'];
+        $services2 = $_POST['services2'] == null  ? '0' : $_POST['services2'];
         $techid = $_POST['tech'];
         $date = $_POST['dates'];
         $thistime = $_POST['timess'];
