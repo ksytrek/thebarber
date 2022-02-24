@@ -1,6 +1,11 @@
 <?php 
 
-include_once('./config/connect.php');
+// include_once('./config/connect.php');
+
+$host='localhost';
+$user='nsc';
+$password='!nsc2022';
+$dbname='srs';
 
 define('DB_SERVER', $host);
 define('DB_USER', $user); // Database Username
