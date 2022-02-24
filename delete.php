@@ -1,15 +1,18 @@
 <?php
-$servername = "localhost";
-$username = "id18510650_barber";
-$password = "Webproject@62";
-$dbname = "id18510650_thebarber";
-$Hname = $_GET['Hname'];
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+// $servername = "localhost";
+// $username = "id18510650_barber";
+// $password = "Webproject@62";
+// $dbname = "id18510650_thebarber";
+// $Hname = $_GET['Hname'];
+// // Create connection
+// $conn = new mysqli($servername, $username, $password, $dbname);
+// // Check connection
+// if ($conn->connect_error) {
+//   die("Connection failed: " . $conn->connect_error);
+// }
+
+
+include 'config/connect.php';
 
 // sql to delete a record
 $sql = "DELETE FROM service WHERE s_name='$Hname'";
