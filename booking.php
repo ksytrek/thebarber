@@ -19,9 +19,9 @@ $services2 = $_POST['services2'];
 $tech = $_POST['tech'];
 $dates = $_POST['dates'];
 $enddate2 = $_POST['timess'];
-$enddate3 = $_POST['txtNumberC'];
+$enddate3 = $_POST['timess'];
 $services_time = $_POST['txtNumberC'];
-
+$price = $_POST['txtprice'];
 $inputDate = $enddate2;
 $strCurrDate = strtotime($inputDate);
 $enddate = date("H:i", mktime(date("H",$strCurrDate)+0, date("i",$strCurrDate)+$enddate3, date("s",$strCurrDate)+0, date("m",$strCurrDate)+0  , date("d",$strCurrDate)+0, date("Y",$strCurrDate)+0));
