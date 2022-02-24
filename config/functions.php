@@ -37,8 +37,8 @@ define('DB_NAME', $dbname); // Database Name
         }
 
         public function booking($custid,$services,$services2, $techid, $date,$thistime,$time,$services_time,$price,$description) {
-            $reg = mysqli_query($this->dbcon, "INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`, `thistime`, `time`, `services_time`, `price`, `description`, `status_id`,  `date_create`) 
-                                    VALUES (NULL, '$custid', '$services', '$services2', '$techid', '$date', '$thistime', '$time', '$services_time', '$price', '$description', '1', CURRENT_TIMESTAMP);");
+            $reg = mysqli_query($this->dbcon, "INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`, `thistime`, `time`, `services_time`, `price`, `description`,  `date_create`) 
+                                    VALUES (NULL, '$custid', '$services', '$services2', '$techid', '$date', '$thistime', '$time', '$services_time', '$price', '$description', CURRENT_TIMESTAMP);");
             return $reg;
         }
 		  public function add11($nameH,$priceH,$timeH) {
