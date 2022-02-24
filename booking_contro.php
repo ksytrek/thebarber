@@ -5,7 +5,7 @@ define("DB_USERNAME", "nsc");
 define("DB_PASSWORD", "!nsc2022");
 // define("DB_USERNAME", "root");
 // define("DB_PASSWORD", "");
-define("DB_NAME", "face_detection");
+define("DB_NAME", "srs");
 
 define("DB_DNS_MYSQL", "mysql:host=" . DB_HOST . "; dbname=" . DB_NAME);
 define("DB_DNS_SQLITE", "sqlite:db/sqlite_file");
@@ -71,9 +71,9 @@ if (isset($_POST['submit'])) {
         echo '}, 500 );</script>';
     } else {
 
-        $sq = "INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`, `thistime`, `time`, `services_time`, `price`, `description`, `status_id`, `disapprove`, `date_create`) VALUES (NULL, '$cid', '$services', '$services2', '$tech', '$dates', '$enddate2', '$enddate', '$services_time', '$description', '1', '1', '1', CURRENT_TIMESTAMP);";
-        // $d = "INSERT INTO booking(custid, services,services2, techid,date,thistime, time,services_time,description) VALUES('$cid', '$services','$services2', '$tech','$dates','$enddate2', '$enddate','$services_time', '$description')";
-        // $sql = $bookingdata->booking($cid, $services, $services2, $tech, $dates, $enddate2, $enddate, $services_time, $description);
+        $sq = "INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`, `thistime`, `time`, `services_time`, `price`, `description`, `status_id`, `disapprove`, `date_create`) VALUES (NULL, '$cid', '$services', '$services2', '$tech', '$dates', '$enddate2', '$enddate', '$services_time', '', '$description', '1', '1', CURRENT_TIMESTAMP);";
+        $d = "INSERT INTO booking(custid, services,services2, techid,date,thistime, time,services_time,description) VALUES('$cid', '$services','$services2', '$tech','$dates','$enddate2', '$enddate','$services_time', '$description')";
+        $sql = $bookingdata->booking($cid, $services, $services2, $tech, $dates, $enddate2, $enddate, $services_time, $description);
 
         if(Database::query($sq)){
             echo "success";
