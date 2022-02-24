@@ -129,7 +129,7 @@ $bookingdata = new DB_con();
                 <div class="col-md-8 col-md-offset-2">
                     <div class="contact_form">
                         <div id="message"></div>
-                        <form action="" method="post" enctype="multipart/form-data" name="frmMain">
+                        <form action="./booking_contro.php" method="post" enctype="multipart/form-data" name="frmMain">
                             <div id="price">
                                 <font color="black">
                                     <fieldset class="row-fluid">
