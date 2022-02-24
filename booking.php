@@ -1,8 +1,11 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <?php 
 error_reporting(0);
 include 'config/header.php';
 include 'config/connect.php';
 include 'config/functions.php';
+
 if($_GET["item"] != "")
 {
 $strSQL = "SELECT * FROM service where id = '".$_GET["item"]."' ";
@@ -82,7 +85,6 @@ if ($sql) {
 
 }
 ?> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script language="JavaScript">
 	function resutName(CusID)
@@ -92,15 +94,14 @@ if ($sql) {
 			<?php
 			$strSQL = "SELECT * FROM service";
             $objQuery = $conn->query($strSQL);
-            while($objResult = mysqli_fetch_assoc($objQuery))
-			{
+            while($objResult = mysqli_fetch_assoc($objQuery)):
 			?>
 				case "<?php echo $objResult["id"];?>":
 				frmMain.txtName.value = "<?php echo $objResult["s_time"];?>";
 				break;
                
 			<?php
-			}
+			endwhile;
 			?>
 			default:
 			 frmMain.txtName.value = "";
@@ -205,7 +206,7 @@ if ($sql) {
                         <div class="col-md-8 col-md-offset-2">
                             <div class="contact_form">
                                 <div id="message"></div>
-                                <form action="" method="post" enctype="multipart/form-data" name="frmMain">
+                                <form action="./booking_contro.php" method="post" enctype="multipart/form-data" name="frmMain">
                                 <div id="price">
                                 <font color="black">
                                     <fieldset class="row-fluid">
