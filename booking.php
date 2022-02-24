@@ -52,24 +52,24 @@ if (isset($_POST['submit'])) {
 
         $custid = $_SESSION['id'];
         $services = $_POST['services'];
-        $services2 = $_POST['services2'];
+        // $services2 = $_POST['services2'];
         // $techid = $_POST['tech'];
         // $date = $_POST['dates'];
         // $thistime = $_POST['timess'];
         // $time = $enddate;
         // $services_time = $_POST['txtNumberC'];
-        $price = $_POST['txtprice'];
+        // $price = $_POST['txtprice'];
         $description = $_POST['description'];
 
         // $custid = '1';
         // $services = '1';
-        // $services2 = '1';
+        $services2 = '1';
         $techid = '1';
         $date = '2022-02-10';
         $thistime = '14:44:55';
         $time = '18:44:55';
         $services_time = '45';
-        // $price = '254';
+        $price = '254';
         // $description = 'description';
 
         // INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`, `thistime`, `time`, `services_time`, `price`, `description`, `status_id`, `disapprove`, `date_create`) 
