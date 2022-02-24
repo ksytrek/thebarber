@@ -1,6 +1,6 @@
 <?php 
 
-include_once('connect.php');
+include_once('../config/connect.php');
 
 define('DB_SERVER', $host);
 define('DB_USER', $user); // Database Username
