@@ -14,9 +14,9 @@ define('DB_NAME', $dbname); // Database Name
 
     class DB_con {
         function __construct() {
-            $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-            $this->dbcon = $conn;
-            mysqli_query($conn, "SET NAMES UTF8");
+            $conn1 = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+            $this->dbcon = $conn1;
+            mysqli_query($conn1, "SET NAMES UTF8");
 
             if (mysqli_connect_errno()) {
                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
