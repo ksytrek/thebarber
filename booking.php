@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
 
         $custid = $_SESSION['id'];
         $services = $_POST['services']  == '' ? 'null' : $_POST['services'];
-        $services2 = $_POST['services2'] == ' ' ? 'null' : $_POST['services2'];
+        $services2 = $_POST['services2'] == ' '  ? 'null' : $_POST['services2'];
         // $techid = $_POST['tech'];
         // $date = $_POST['dates'];
         // $thistime = $_POST['timess'];
@@ -251,7 +251,7 @@ if (isset($_POST['submit'])) {
                                         </div>
                                         <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
                                             <label class="sr-only">Select Time</label>
-                                            <select name="services2" id="services2" class="form-control" name="lmName2" OnChange="resutName2(this.value);resutName4(this.value);">
+                                            <select name="services2" id="services2" class="form-control"  OnChange="resutName2(this.value);resutName4(this.value);">
                                                 <?php
                                                 $strSQL2 = "SELECT * FROM service";
                                                 $objQuery2 = $conn->query($strSQL2);
