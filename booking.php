@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
         #------------------------- New Co
 
         $custid = $_SESSION['id'];
-        $services = $_POST['services']  == '' ? 'null' : $_POST['services'];
+        $services = empty($_POST['services']) ? 'null' : $_POST['services'];
         // $services2 = $_POST['services2'] == ' '  ? 'null' : $_POST['services2'];
         // $techid = $_POST['tech'];
         // $date = $_POST['dates'];
@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
 
         // $custid = '1';
         // $services = '1';
-        $services2 = '1';
+        // $services2 = '1';
         $techid = '1';
         $date = '2022-02-10';
         $thistime = '14:44:55';
