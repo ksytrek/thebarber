@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 30, 2022 at 04:03 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Host: localhost
+-- Generation Time: Feb 24, 2022 at 05:17 PM
+-- Server version: 8.0.28-0ubuntu0.20.04.3
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `thebarber`
+-- Database: `srs`
 --
 
 -- --------------------------------------------------------
@@ -28,36 +28,39 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `booking` (
-  `id` int(11) NOT NULL,
-  `custid` int(11) NOT NULL,
-  `services` int(11) NOT NULL,
-  `services2` int(11) NOT NULL,
-  `techid` int(11) NOT NULL,
+  `id` int NOT NULL,
+  `custid` int NOT NULL,
+  `services` int NOT NULL,
+  `services2` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `techid` int NOT NULL,
   `date` date NOT NULL,
   `thistime` time NOT NULL,
   `time` time NOT NULL,
-  `services_time` int(255) NOT NULL,
-  `price` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `status_id` int(11) NOT NULL,
-  `disapprove` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `date_create` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `services_time` int NOT NULL,
+  `price` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `status_id` int NOT NULL,
+  `disapprove` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `booking`
 --
 
 INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`, `thistime`, `time`, `services_time`, `price`, `description`, `status_id`, `disapprove`, `date_create`) VALUES
-(15, 4, 2, 0, 25, '2021-04-02', '20:00:00', '20:45:00', 45, '', 'รวย', 0, '', '2021-04-02 02:21:48'),
-(16, 4, 1, 1, 25, '2021-04-03', '22:00:00', '23:00:00', 60, '', 'รวย', 1, '', '2021-04-02 02:23:49'),
-(17, 4, 1, 0, 25, '2021-04-04', '10:00:00', '10:30:00', 30, '', 'ทดสอบ', 0, '', '2021-04-02 02:30:02'),
-(19, 11, 1, 0, 27, '2021-04-02', '20:00:00', '20:30:00', 30, '', 'รวย', 0, '', '2021-04-02 02:41:01'),
-(20, 11, 1, 2, 26, '2021-04-02', '20:00:00', '21:15:00', 75, '', 'ลมเข้าเครื่อง', 0, '', '2021-04-02 02:50:49'),
-(21, 4, 2, 0, 25, '2021-04-06', '14:30:00', '15:15:00', 45, '', 'รวย', 0, '', '2021-04-06 01:46:20'),
-(22, 4, 2, 2, 25, '2021-04-07', '10:05:00', '11:35:00', 90, '', 'รวย', 0, '', '2021-04-06 02:21:23'),
-(23, 4, 2, 2, 25, '2021-04-07', '08:20:00', '09:50:00', 90, '', '', 3, '', '2022-01-20 16:42:57'),
-(24, 4, 1, 0, 25, '2022-01-20', '16:00:00', '16:00:00', 0, '', '', 2, 'หหห', '2022-01-20 16:29:40');
+(31, 4, 12, '1', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'xfg', 1, '1', '2022-02-24 16:53:25'),
+(32, 4, 12, '12', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'ddd', 1, '1', '2022-02-24 16:55:29'),
+(33, 4, 12, '1', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'ss', 1, '1', '2022-02-24 17:03:56'),
+(34, 4, 12, '', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'ds', 1, '1', '2022-02-24 17:05:44'),
+(35, 4, 12, '', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'sdf', 1, '1', '2022-02-24 17:07:04'),
+(36, 4, 12, '', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'กดหด', 1, '1', '2022-02-24 17:07:58'),
+(37, 4, 12, '12', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'xfg', 1, '1', '2022-02-24 17:08:22'),
+(38, 4, 12, 'null', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'ss', 1, '1', '2022-02-24 17:09:35'),
+(39, 4, 12, 'null', 26, '2022-02-27', '14:44:55', '18:44:55', 45, '254', 'dsf', 1, '1', '2022-02-24 17:10:37'),
+(40, 4, 12, 'null', 26, '2022-02-26', '00:35:00', '01:20:00', 45, '120', 'sdf', 1, '1', '2022-02-24 17:11:31'),
+(41, 4, 12, '12', 25, '2022-02-26', '17:40:00', '19:10:00', 90, '240', '', 1, '1', '2022-02-24 17:16:58'),
+(42, 4, 13, 'null', 26, '2022-03-03', '09:00:00', '09:20:00', 20, '100', '', 1, '1', '2022-02-24 17:17:36');
 
 -- --------------------------------------------------------
 
@@ -66,10 +69,10 @@ INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`
 --
 
 CREATE TABLE `linetoken` (
-  `id` int(11) NOT NULL,
-  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `date_token` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `date_token` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `linetoken`
@@ -85,11 +88,11 @@ INSERT INTO `linetoken` (`id`, `token`, `date_token`) VALUES
 --
 
 CREATE TABLE `service` (
-  `id` int(11) NOT NULL,
-  `s_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `s_price` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `s_time` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int NOT NULL,
+  `s_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `s_price` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `s_time` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `service`
@@ -97,7 +100,8 @@ CREATE TABLE `service` (
 
 INSERT INTO `service` (`id`, `s_name`, `s_price`, `s_time`) VALUES
 (2, 'Undercut', '160', 45),
-(12, 'รองทรง', '120', 45);
+(12, 'รองทรง', '120', 45),
+(13, 'สระ', '100', 20);
 
 -- --------------------------------------------------------
 
@@ -106,15 +110,15 @@ INSERT INTO `service` (`id`, `s_name`, `s_price`, `s_time`) VALUES
 --
 
 CREATE TABLE `tblusers` (
-  `id` int(11) NOT NULL,
-  `fullname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `useremail` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `tel` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `regdate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `role_id` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int NOT NULL,
+  `fullname` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `useremail` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `tel` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `regdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `role_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `tblusers`
@@ -163,25 +167,25 @@ ALTER TABLE `tblusers`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `linetoken`
 --
 ALTER TABLE `linetoken`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tblusers`
 --
 ALTER TABLE `tblusers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

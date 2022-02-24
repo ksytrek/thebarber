@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
         $time = $enddate;
         $services_time = $_POST['txtNumberC'];
         $price = $_POST['txtprice'];
-        $description = $_POST['description'];
+        $description = $_POST['description'] == null || $_POST['description'] == ' ' ? 'null' : $_POST['description'];
 
         // $custid = '1';
         // $services = '1';
