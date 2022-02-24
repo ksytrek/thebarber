@@ -13,6 +13,8 @@ $resultcat2 = $conn->query($sqlcat);
 $bookingdata = new DB_con();
 
 ?>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script language="JavaScript">
