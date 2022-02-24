@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 24, 2022 at 05:17 PM
+-- Generation Time: Feb 24, 2022 at 05:53 PM
 -- Server version: 8.0.28-0ubuntu0.20.04.3
 -- PHP Version: 7.4.3
 
@@ -38,9 +38,9 @@ CREATE TABLE `booking` (
   `time` time NOT NULL,
   `services_time` int NOT NULL,
   `price` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `status_id` int NOT NULL,
-  `disapprove` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status_id` int DEFAULT NULL,
+  `disapprove` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
@@ -49,18 +49,7 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`, `thistime`, `time`, `services_time`, `price`, `description`, `status_id`, `disapprove`, `date_create`) VALUES
-(31, 4, 12, '1', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'xfg', 1, '1', '2022-02-24 16:53:25'),
-(32, 4, 12, '12', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'ddd', 1, '1', '2022-02-24 16:55:29'),
-(33, 4, 12, '1', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'ss', 1, '1', '2022-02-24 17:03:56'),
-(34, 4, 12, '', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'ds', 1, '1', '2022-02-24 17:05:44'),
-(35, 4, 12, '', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'sdf', 1, '1', '2022-02-24 17:07:04'),
-(36, 4, 12, '', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'กดหด', 1, '1', '2022-02-24 17:07:58'),
-(37, 4, 12, '12', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'xfg', 1, '1', '2022-02-24 17:08:22'),
-(38, 4, 12, 'null', 1, '2022-02-10', '14:44:55', '18:44:55', 45, '254', 'ss', 1, '1', '2022-02-24 17:09:35'),
-(39, 4, 12, 'null', 26, '2022-02-27', '14:44:55', '18:44:55', 45, '254', 'dsf', 1, '1', '2022-02-24 17:10:37'),
-(40, 4, 12, 'null', 26, '2022-02-26', '00:35:00', '01:20:00', 45, '120', 'sdf', 1, '1', '2022-02-24 17:11:31'),
-(41, 4, 12, '12', 25, '2022-02-26', '17:40:00', '19:10:00', 90, '240', '', 1, '1', '2022-02-24 17:16:58'),
-(42, 4, 13, 'null', 26, '2022-03-03', '09:00:00', '09:20:00', 20, '100', '', 1, '1', '2022-02-24 17:17:36');
+(53, 4, 12, '0', 26, '2022-02-27', '17:00:00', '17:45:00', 45, '120', ' ', 2, 'ไม่ว่าง', '2022-02-24 17:53:17');
 
 -- --------------------------------------------------------
 
@@ -101,7 +90,9 @@ CREATE TABLE `service` (
 INSERT INTO `service` (`id`, `s_name`, `s_price`, `s_time`) VALUES
 (2, 'Undercut', '160', 45),
 (12, 'รองทรง', '120', 45),
-(13, 'สระ', '100', 20);
+(13, 'สระ', '100', 20),
+(14, 'ดัด', '50', 30),
+(15, 'a', 'ุ50', 20);
 
 -- --------------------------------------------------------
 
@@ -167,7 +158,7 @@ ALTER TABLE `tblusers`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `linetoken`
@@ -179,7 +170,7 @@ ALTER TABLE `linetoken`
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tblusers`
