@@ -79,17 +79,18 @@ if (isset($_POST['submit'])) {
             .
             .
             .
-            <?php $servername = "localhost";
-            $username = "id18510650_barber";
-            $password = "Webproject@62";
-            $dbname = "id18510650_thebarber";
+            <?php 
+            // $servername = "localhost";
+            // $username = "id18510650_barber";
+            // $password = "Webproject@62";
+            // $dbname = "id18510650_thebarber";
 
             // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
+            // $conn = new mysqli($servername, $username, $password, $dbname);
             // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
+            // if ($conn->connect_error) {
+            //     die("Connection failed: " . $conn->connect_error);
+            // }
 
             $sql = "SELECT * FROM service WHERE s_name='$HairUp'";
             $result = $conn->query($sql);
