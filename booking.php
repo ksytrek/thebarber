@@ -23,14 +23,14 @@ $bookingdata = new DB_con();
             <?php
             $strSQL = "SELECT * FROM service";
             $objQuery = $conn->query($strSQL);
-            while ($objResult = mysqli_fetch_assoc($objQuery)) :
+            while ($objResult = mysqli_fetch_assoc($objQuery)) {
             ?>
                 case "<?php echo $objResult["id"]; ?>":
                     frmMain.txtName.value = "<?php echo $objResult["s_time"]; ?>";
                     break;
 
                 <?php
-            endwhile;
+            }
                 ?>
             default:
                 frmMain.txtName.value = "";
