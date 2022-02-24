@@ -2,11 +2,16 @@
 
 // include_once('./config/connect.php');
 
-$host='localhost';
-$user='nsc';
-$password='!nsc2022';
-$dbname='srs';
-
+// $host='localhost';
+// $user='nsc';
+// $password='!nsc2022';
+// $dbname='srs';
+// $info = array(
+//     'host' => $host,
+//     'user' => $user,
+//     'password' => $password,
+//     'dbname' => $dbname
+// );
 define('DB_SERVER', $host);
 define('DB_USER', $user); // Database Username
 define('DB_PASS', $password); // Database Password
@@ -14,8 +19,11 @@ define('DB_NAME', $dbname); // Database Name
 
     class DB_con {
         function __construct() {
-            $conn1 = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-            $this->dbcon = $conn1;
+            include_once('./config/connect.php');
+            // $conn = mysqli_connect($info['host'], $info['user'], $info['password'], $info['dbname']) or die('Error connection database!');
+            
+            // $conn1 = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+            $this->dbcon = $conn;
             mysqli_query($conn1, "SET NAMES UTF8");
 
             if (mysqli_connect_errno()) {
@@ -198,5 +206,3 @@ WHERE s_name = '$HairUp';");
             return $result;
         }
 }
-
-?>
