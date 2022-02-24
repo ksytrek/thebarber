@@ -53,8 +53,8 @@ if (isset($_POST['submit'])) {
         $custid = $_SESSION['id'];
         $services = $_POST['services'] == ' ' ? 'null' : $_POST['services'];
         $services2 = $_POST['services2'] == null  ? 'null' : $_POST['services2'];
-        // $techid = $_POST['tech'];
-        // $date = $_POST['dates'];
+        $techid = $_POST['tech'];
+        $date = $_POST['dates'];
         // $thistime = $_POST['timess'];
         // $time = $enddate;
         // $services_time = $_POST['txtNumberC'];
@@ -64,8 +64,8 @@ if (isset($_POST['submit'])) {
         // $custid = '1';
         // $services = '1';
         // $services2 = '1';
-        $techid = '1';
-        $date = '2022-02-10';
+        // $techid = '1';
+        // $date = '2022-02-10';
         $thistime = '14:44:55';
         $time = '18:44:55';
         $services_time = '45';
