@@ -55,10 +55,10 @@ if (isset($_POST['submit'])) {
         $services2 = $_POST['services2'] == null  ? 'null' : $_POST['services2'];
         $techid = $_POST['tech'];
         $date = $_POST['dates'];
-        // $thistime = $_POST['timess'];
-        // $time = $enddate;
-        // $services_time = $_POST['txtNumberC'];
-        // $price = $_POST['txtprice'];
+        $thistime = $_POST['timess'];
+        $time = $enddate;
+        $services_time = $_POST['txtNumberC'];
+        $price = $_POST['txtprice'];
         $description = $_POST['description'];
 
         // $custid = '1';
@@ -66,10 +66,10 @@ if (isset($_POST['submit'])) {
         // $services2 = '1';
         // $techid = '1';
         // $date = '2022-02-10';
-        $thistime = '14:44:55';
-        $time = '18:44:55';
-        $services_time = '45';
-        $price = '254';
+        // $thistime = '14:44:55';
+        // $time = '18:44:55';
+        // $services_time = '45';
+        // $price = '254';
         echo '<script type="text/javascript">';
         echo "console.log('{$_POST['services2']}')";
         echo '</script>';
