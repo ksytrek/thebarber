@@ -70,15 +70,16 @@ if (isset($_POST['submit'])) {
         // $time = '18:44:55';
         // $services_time = '45';
         // $price = '254';
-        echo '<script type="text/javascript">';
-        echo "console.log('{$_POST['services2']}')";
-        echo '</script>';
+        // echo '<script type="text/javascript">';
+        // echo "console.log('{$_POST['services2']}')";
+        // echo '</script>';
         // $description = 'description';
 
         // INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`, `thistime`, `time`, `services_time`, `price`, `description`, `status_id`, `disapprove`, `date_create`) 
         // VALUES (NULL, '1', '1', '1', '2', '2022-02-10', '14:44:55', '18:44:55', '1', '1', 'd', '1', '1', CURRENT_TIMESTAMP);
         #-------------------------
         $sql = $bookingdata->booking($custid, $services, $services2, $techid, $date, $thistime, $time, $services_time, $price, $description);
+        #-------------------------
         if ($sql) {
             echo '<script type="text/javascript">';
             echo 'setTimeout(function () { swal.fire({
