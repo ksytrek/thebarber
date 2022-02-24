@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
 
         $custid = $_SESSION['id'];
         $services = $_POST['services'] == ' ' ? 'null' : $_POST['services'];
-        // $services2 = $_POST['services2'] == ' '  ? 'null' : $_POST['services2'];
+        $services2 = $_POST['services2'] == ' '  ? 'null' : $_POST['services2'];
         // $techid = $_POST['tech'];
         // $date = $_POST['dates'];
         // $thistime = $_POST['timess'];
@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
         $services_time = '45';
         $price = '254';
         echo '<script type="text/javascript">';
-        echo "alert('{$services}')";
+        echo "alert('{$services2}')";
         echo '</script>';
         // $description = 'description';
 
