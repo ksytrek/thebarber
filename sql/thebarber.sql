@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 24, 2022 at 05:53 PM
+-- Generation Time: Feb 24, 2022 at 06:14 PM
 -- Server version: 8.0.28-0ubuntu0.20.04.3
 -- PHP Version: 7.4.3
 
@@ -49,7 +49,8 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`, `thistime`, `time`, `services_time`, `price`, `description`, `status_id`, `disapprove`, `date_create`) VALUES
-(53, 4, 12, '0', 26, '2022-02-27', '17:00:00', '17:45:00', 45, '120', ' ', 2, 'ไม่ว่าง', '2022-02-24 17:53:17');
+(53, 4, 12, '0', 26, '2022-02-27', '17:00:00', '17:45:00', 45, '120', ' ', 2, 'ไม่ว่าง', '2022-02-24 17:53:17'),
+(54, 4, 13, '0', 26, '2022-02-27', '20:00:00', '20:20:00', 20, '100', ' ', 1, NULL, '2022-02-24 17:53:58');
 
 -- --------------------------------------------------------
 
@@ -158,7 +159,7 @@ ALTER TABLE `tblusers`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `linetoken`
