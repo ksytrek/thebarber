@@ -36,6 +36,9 @@ class Database
 }
 
 
+include 'config/connect.php';
+include 'config/functions.php';
+
 if (isset($_POST['submit'])) {
     $cid = $_SESSION['id'];
     $services = $_POST['services'];
@@ -61,19 +64,19 @@ if (isset($_POST['submit'])) {
 
     if ($rowcount > 0) {
 
-        echo '<script type="text/javascript">';
-        echo 'setTimeout(function () { swal.fire({
-    title: "มีการจองคิวอยู่แล้ว!",
-    text: "กรุณาลองใหม่!",
-    type: "warning",
-    icon: "error"
-    });';
-        echo '}, 500 );</script>';
+    //     echo '<script type="text/javascript">';
+    //     echo 'setTimeout(function () { swal.fire({
+    // title: "มีการจองคิวอยู่แล้ว!",
+    // text: "กรุณาลองใหม่!",
+    // type: "warning",
+    // icon: "error"
+    // });';
+    //     echo '}, 500 );</script>';
     } else {
 
         $sq = "INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`, `thistime`, `time`, `services_time`, `price`, `description`, `status_id`, `disapprove`, `date_create`) VALUES (NULL, '$cid', '$services', '$services2', '$tech', '$dates', '$enddate2', '$enddate', '$services_time', '', '$description', '1', '1', CURRENT_TIMESTAMP);";
-        $d = "INSERT INTO booking(custid, services,services2, techid,date,thistime, time,services_time,description) VALUES('$cid', '$services','$services2', '$tech','$dates','$enddate2', '$enddate','$services_time', '$description')";
-        $sql = $bookingdata->booking($cid, $services, $services2, $tech, $dates, $enddate2, $enddate, $services_time, $description);
+        // $d = "INSERT INTO booking(custid, services,services2, techid,date,thistime, time,services_time,description) VALUES('$cid', '$services','$services2', '$tech','$dates','$enddate2', '$enddate','$services_time', '$description')";
+        // $sql = $bookingdata->booking($cid, $services, $services2, $tech, $dates, $enddate2, $enddate, $services_time, $description);
 
         if(Database::query($sq)){
             echo "success";
