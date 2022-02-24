@@ -3,7 +3,7 @@
 <?php 
 error_reporting(0);
 include 'config/header.php';
-include 'config/connect.php';
+// include 'config/connect.php';
 include 'config/functions.php';
 
 if($_GET["item"] != "")
