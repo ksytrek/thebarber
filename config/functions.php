@@ -36,8 +36,9 @@ define('DB_NAME', $dbname); // Database Name
             return $reg;
         }
 
-        public function booking($cid,$services,$services2, $tech, $dates,$enddate2,$enddate,$services_time,$description) {
-            $reg = mysqli_query($this->dbcon, "INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`, `thistime`, `time`, `services_time`, `price`, `description`, `status_id`, `disapprove`, `date_create`) VALUES (NULL, '1', '1', '1', '1', '2022-02-11', '19:21:01', '20:21:01', '1', '1', '1', '1', '1', CURRENT_TIMESTAMP);");
+        public function booking($custid,$services,$services2, $techid, $date,$thistime,$time,$services_time,$price,$description) {
+            $reg = mysqli_query($this->dbcon, "INSERT INTO `booking` (`id`, `custid`, `services`, `services2`, `techid`, `date`, `thistime`, `time`, `services_time`, `price`, `description`, `status_id`, `disapprove`, `date_create`) 
+                                    VALUES (NULL, '$custid', '$services', '$services2', '$techid', '$date', '$thistime', '$time', '$services_time', '$price', '$description', '1', '1', CURRENT_TIMESTAMP);");
             return $reg;
         }
 		  public function add11($nameH,$priceH,$timeH) {
