@@ -3,7 +3,7 @@
 $host='localhost';
 $user='nsc';
 $password='!nsc2022';
-$dbname='srs';
+$dbname='thebarber';
 
 $info = array(
     'host' => $host,
